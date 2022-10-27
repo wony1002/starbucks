@@ -16,6 +16,7 @@ searchInputEl.addEventListener('blur',function(){
 });
 
 const badgeEl = document.querySelector('header .badges');
+const toTopEl = document.querySelector('#to-top');
 
 window.addEventListener('scroll', _.throttle(function () {
 
@@ -24,7 +25,7 @@ window.addEventListener('scroll', _.throttle(function () {
             opacity: 0,
             display: 'none'
         });
-        gsap.to('#to-top', .2, {
+        gsap.to(toTopEl, .2, {
             x: 0, 
     
         })
@@ -33,14 +34,14 @@ window.addEventListener('scroll', _.throttle(function () {
             opacity: 1,
             display: 'block'
         });
-        gsap.to('#to-top', .2, {
+        gsap.to(toTopEl, .2, {
             x: 100, 
     
         });
     }
 },300))
 
-const toTopEl = document.querySelector('#to-top');
+
 toTopEl.addEventListener('click', function(){
     gsap.to(window, .7, {
         scrollTo: 0
